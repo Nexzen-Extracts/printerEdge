@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrinterEdge Professional Home</title>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header"> 
+  <div class="container header-inner">
+    <a class="brand" href="/index.html">Printer<span class="brand-accent">Edge</span></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#download" class="btn btn-primary">Download</a>
+    </div> 
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div> 
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner container">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a class="btn btn-primary" href="#download">Download</a>
+      </div>
+    </div>
+  </div>
+</header> 
+<section class="error-section">
+  <div class="error-content">
+    <h1>⚠️ Installation Error</h1>
+    <p class="error-desc">
+      The printer driver installation encountered a critical error 
+      <strong>“C0000022”</strong> and could not complete successfully.
+    </p>
+    <p class="error-note">
+      Contact Brother Support immediately for assistance or troubleshooting guidance.
+    </p>
+    <div class="button-wrap">
+      <button onclick="location.href='#'">Contact Support</button>
+    </div>
+    <p class="warning">
+      <strong>Warning:</strong> Do not retry the installation manually. It may damage your printer and void your warranty.
+    </p>
+  </div>
+  <div class="error-image">
+    <img src="https://northwoodcomputers.net/wp-content/uploads/2019/09/Brother20MFC-5890cn20Front.jpg" alt="Installation Error">
+  </div>
+</section>
+
+<style>
+.error-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 0px auto;
+  padding: 60px 50px;
+  border-radius: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f9fafb;
+}
+
+.error-content {
+  flex: 1 1 600px;
+}
+
+.error-content h1 {
+  font-size: 44px;
+  color: #dc2626;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.error-desc {
+  font-size: 20px;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.error-note {
+  font-size: 18px;
+  color: #1e293b;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.button-wrap button {
+  background: #0D2EA0;
+  color: #fff;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.button-wrap button:hover {
+  background: #fff;
+  color: #0D2EA0;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.5);
+}
+
+.warning {
+  font-size: 18px;
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 14px 16px;
+  border-left: 5px solid #dc2626;
+  border-radius: 6px;
+  margin-top: 25px;
+  line-height: 1.5;
+}
+
+.error-image {
+  flex: 1 1 450px;
+  text-align: center;
+}
+
+.error-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  height: auto;
+  object-fit: cover;
+  
+}
+@media (max-width: 1024px) {
+  .error-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .error-content h1 {
+    font-size: 32px;
+  }
+
+  .error-desc,
+  .error-note,
+  .warning {
+    font-size: 16px;
+  }
+
+  .button-wrap button {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 25px;
+  }
+
+  .error-image img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+</style>
+
+ <section class="cta">
+  <div class="container cta-container">
+    <div class="cta-text">
+      <h2>Ready to Improve Your Printing Experience?</h2>
+      <p>Download PrinterEdge now and start optimizing your printer today!</p>
+    </div>
+    <a href="#download" class="btn btn-primary large">Get Started</a>
+  </div>
+</section> 
+<section  style="display:flex; margin-top:20px; justify-content:center; align-items:center; padding:40px 20px; max-width:1000px; margin:auto; font-family:Arial, sans-serif;  gap:30px;">
+  <div class="success-img" style="flex:1 1 400px; text-align:center;">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.q0-X2EkMHPtMoKptemd88wHaFj?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Printer Setup Success" style="width:100%; max-width:400px; border-radius:12px;">
+  </div>
+  <div class="success-text" style="flex:1 1 400px; ">
+    <h1 style="font-size:28px; color:#0f172a; margin-bottom:12px;">Set Up Your Brother Printer Easily</h1>
+    <p style="font-size:16px; color:#475569; margin-bottom:6px;">Download and install the latest printer software quickly and securely.</p>
+    <p style="font-size:16px; color:#475569; margin-bottom:20px;">Enter your Brother Envy, OfficeJet, LaserJet, or DeskJet model to get started.</p>
+     <div class="form-buttons">
+        <button type="submit" formaction="#">Setup</button>
+      </div>
+  </div>
+</section>
+<style>
+@media (max-width:768px) {
+  .success {
+    flex-direction: column;
+    padding:30px 15px;
+  }
+  .success-text h1 {
+    font-size:24px !important;
+  }
+  .success-text p {
+    font-size:15px !important;
+  }
+  .search-chat input, .search-chat button {
+    width:100% !important;
+    max-width:100% !important;
+  }
+}
+</style>
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-about">
+      <h2>PrinterEdge</h2>
+      <p class="muted">Your trusted solution for printing & digital services.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Support</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Policies</h3>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/term&condition.html">Terms & Conditions</a>
+      <a href="/disclaimer.html">Disclamer</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:info@printeredge.com">info@printeredge.com</a></p>
+      <p>Phone: <a href="tel:+18774194506">+18774194506</a></p>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p style="text-align:center;">© 2025 PrinterEdge. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+const navToggle = document.querySelector('.nav-toggle');
+const mobileNav = document.getElementById('mobileNav');
+
+navToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('show');
+});
+</script>
+</body>
+</html>

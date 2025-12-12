@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PrinterEdge — Printer Assist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"> 
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Printer<span class="brand-accent">Edge</span></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="#download" class="btn btn-primary">Download</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner container">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a class="btn btn-primary" href="#download">Download</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main style="max-width:900px; margin:40px auto; padding:30px; line-height:1.8; font-family:Arial, sans-serif; color:#333; background-color:#fff; border-radius:10px;">
+
+    <h1 style="color:#000; margin-bottom:25px; text-align:center; font-size:32px;">Disclaimer</h1>
+
+    <p style="margin-bottom:20px;">The information provided by PrinterEdge (“we,” “us” or “our”) on  info@printeredge.com (the “Site”) and our services is for general informational purposes only. All information on the Site is provided in good faith; however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.</p>
+
+    <h2 style="color:#0073e6; margin-bottom:10px;">1. No Professional Advice</h2>
+    <p style="margin-bottom:20px;">The content on this website is not intended to be a substitute for professional advice, including but not limited to technical, legal, financial, or printer-related advice. Always seek the advice of a qualified professional with any questions you may have regarding a printer issue or service.</p>
+
+    <h2 style="color:#0073e6; margin-bottom:10px;">2. External Links</h2>
+    <p style="margin-bottom:20px;">The Site may contain links to other websites or resources provided by third parties. We are not responsible for the availability or accuracy of such external sites or resources, and we do not endorse and are not responsible or liable for any content, advertising, products, or other materials on or available from such sites or resources.</p>
+
+    <h2 style="color:#0073e6; margin-bottom:10px;">3. Limitation of Liability</h2>
+    <p style="margin-bottom:20px;">In no event shall PrinterEdge be liable for any loss or damage, including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits, arising out of or in connection with the use of this website or services.</p>
+
+    <h2 style="color:#0073e6; margin-bottom:10px;">4. Accuracy of Information</h2>
+    <p style="margin-bottom:20px;">While we strive to provide accurate and up-to-date information, we make no warranties regarding the completeness, reliability, or accuracy of the content. Any reliance you place on such information is strictly at your own risk.</p>
+
+    <h2 style="color:#0073e6; margin-bottom:10px;">5. Changes to Disclaimer</h2>
+    <p style="margin-bottom:20px;">We reserve the right to update or change this Disclaimer at any time. Your continued use of the website or services constitutes acceptance of any modifications.</p>
+
+   <h2 style="color:#0073e6; margin-bottom:10px;">6. Contact Us</h2>
+<p style="margin-bottom:10px;">If you have any questions about this Disclaimer, you can contact us at:</p>
+<p style="margin-bottom:0;">
+    <strong>PrinterEdge</strong><br>
+    Email: <a href="mailto: info@printeredge.com" style="color:#0073e6; text-decoration:none;"> info@printeredge.com</a><br>
+    Phone: <a href="tel:+18774194506" style="color:#0073e6; text-decoration:none;">+18774194506</a>
+</p>
+
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-about">
+      <h2>PrinterEdge</h2>
+      <p class="muted">Your trusted solution for printing & digital services.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Support</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Policies</h3>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="term&condition.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclamer</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:info@printeredge.com">info@printeredge.com</a></p>
+      <p>Phone: <a href="tel:+18774194506">+18774194506</a></p>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p style="text-align:center;">© 2025 PrinterEdge. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+ 
+
+const navToggle = document.querySelector('.nav-toggle');
+const mobileNav = document.getElementById('mobileNav');
+
+navToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('show');
+});
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('active');
+  });
+});
+
+</script>
+
+</body>
+</html>

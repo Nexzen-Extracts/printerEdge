@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrinterEdge Printer</title>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+
+</head>
+<body>
+<header class="site-header"> 
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Printer<span class="brand-accent">Edge</span></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#download" class="btn btn-primary">Download</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner container">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a class="btn btn-primary" href="#download">Download</a>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="main-wrapper">
+  <div class="left-content">
+    <h1>Brother Driver Installation</h1>
+    <p>Preparing and optimizing your printer driver for the best performance.</p>
+
+    <div class="steps">
+      <div class="step-box"><span>📥</span> 1. Downloading Files</div>
+      <div class="step-box"><span>📦</span> 2. Extracting Components</div>
+      <div class="step-box"><span>⚙️</span> 3. Installation Setup</div>
+    </div>
+
+    <a href="wizard.html"><button class="start-btn" >Start Installation</button></a>
+  </div>
+</section>
+
+
+<style>
+.main-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  background: url('https://www.brother.in/-/media/ap2/India/Products/Printer/printers/Banner_component---Printer-product-hub_D-(1).png?h=720&iar=0&w=1920&rev=d47e9c3302d74375a8a9d908d962395f') center/cover no-repeat;
+  padding: 50px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  color: #fff;
+  min-height: 400px;
+}
+
+.main-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+  z-index: 0;
+}
+
+.left-content {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+.left-content h1 {
+  color:#0058d4;
+  font-size: 36px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.left-content p {
+  color: black;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.steps {
+  margin: 10px 0;
+}
+
+.step-box {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  width:400px;
+}
+
+.step-box span {
+  font-size: 22px;
+}
+
+.start-btn {
+  background: #0058d4;
+  color: #fff;
+  padding: 15px 160px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+.start-btn:hover {
+  background: #003f9e;
+}
+
+
+
+
+
+@media (max-width: 992px) {
+  .main-wrapper {
+    padding: 30px;
+    text-align: center;
+  }
+  .left-content h1 { font-size: 30px; }
+  .left-content p { font-size: 16px; }
+  .start-btn { padding: 15px 80px; }
+}
+
+@media (max-width: 600px) {
+  .main-wrapper { padding: 25px; }
+  .left-content h1 { font-size: 26px; }
+  .step-box { font-size: 15px; padding: 8px; }
+  .start-btn { padding: 12px 40px; font-size: 16px; }
+}
+</style>
+
+
+
+<section class="cta">
+  <div class="container cta-container">
+    <div class="cta-text">
+      <h2>Ready to Improve Your Printing Experience?</h2>
+      <p>Download PrinterEdge now and start optimizing your printer today!</p>
+    </div>
+    <a href="#download" class="btn btn-primary large">Get Started</a>
+  </div>
+</section>
+<section  style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; padding:50px 20px;  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-radius:10px; gap:20px;  margin-top:40px;">
+  <div class="features-img" style="flex:1; min-width:300px; display:flex; justify-content:center; align-items:center;">
+    <img src="https://www.pcworld.com/wp-content/uploads/2024/03/brother-laser-printer.jpg?quality=50&strip=all" alt="Printer Features" style="max-width:100%; height:300px; border-radius:10px; " />
+  </div>
+  <div class="features-text" style="flex:1; min-width:300px;">
+    <h2 style="font-size:32px; color:#222; margin-bottom:15px;">Why Choose Easy Start?</h2>
+    <p style="font-size:18px; color:#555; margin-bottom:20px;">Easy Start not only connects your printer but ensures a seamless setup experience, saving you time and effort.</p>
+    <ul style="font-size:16px; color:#333; padding-left:20px; margin-bottom:30px;">
+      <li style="margin-bottom:10px;">Automatic driver installation</li>
+      <li style="margin-bottom:10px;">Step-by-step guidance</li>
+      <li style="margin-bottom:10px;">Works with all major printer brands</li>
+      <li style="margin-bottom:10px;">Quick and reliable connection</li>
+    </ul>
+    <button style="padding:12px 25px; font-size:16px; background-color:#0D2EA0; color:#fff; border:none; border-radius:5px; cursor:pointer; transition:0.3s;">Learn More</button>
+  </div>
+</section> 
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-about">
+      <h2>PrinterEdge</h2>
+      <p class="muted">Your trusted solution for printing & digital services.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Support</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Policies</h3>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/term&condition.html">Terms & Conditions</a>
+      <a href="/disclaimer.html">Disclamer</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:info@printeredge.com">info@printeredge.com</a></p>
+      <p>Phone: <a href="tel:+18774194506">+18774194506</a></p>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p style="text-align:center;">© 2025 PrinterEdge. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+ 
+
+const navToggle = document.querySelector('.nav-toggle');
+const mobileNav = document.getElementById('mobileNav');
+
+navToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('show');
+});
+
+
+
+</script>
+
+</body>
+</html>
+
+
+

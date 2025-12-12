@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrinterEdge Professional Home</title>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+<style>
+  
+  
+
+  
+  .features { padding: 56px 20px; background: #f9f9f9; }
+  .section-title { text-align:center; font-size: 28px; margin-bottom: 32px; color:black; }
+  .cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+  .card { background:; border-radius:12px; text-align:center; padding:20px; transition: transform 0.3s, box-shadow 0.3s; }
+  .card:hover { transform: translateY(-6px); box-shadow:0 10px 30px rgba(0,0,0,0.1); }
+  .card img { width:80px; margin-bottom:12px; }
+  .card h4 { color:black; margin-bottom:10px; }
+  .card p { font-size:14px; color:#555; }
+
+  @media(max-width:1024px){ .cards, .brand-grid{ grid-template-columns: repeat(2,1fr); } .hero { flex-direction:column; text-align:center; } }
+  @media(max-width:600px){ .cards, .brand-grid{ grid-template-columns:1fr; } .hero-text h1{ font-size:28px; } .hero-text p{ font-size:16px; } }
+</style>
+</head>
+<body>
+
+<header class="site-header"> 
+  <div class="container header-inner">
+    <a class="brand" href="/index.html">Printer<span class="brand-accent">Edge</span></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="#download" class="btn btn-primary">Download</a>
+    </div> 
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div> 
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner container">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#software">Software Info</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a class="btn btn-primary" href="#download">Download</a>
+      </div>
+    </div>
+  </div>
+</header> 
+<section class="hero" style="
+  display:flex; align-items:center; justify-content:space-between;
+  max-width:1400px; margin:0px auto; padding:50px 30px; flex-wrap:wrap; gap:50px;
+  font-family:Roboto, sans-serif; background:#f8f9fb; border-radius:18px;
+  
+">
+  <div class="hero-text" style="flex:1 1 500px;">
+    <h1 style="font-size:42px; color:	#0D2EA0; margin-bottom:20px; font-weight:700;">
+     Brother Printer Assistant
+    </h1>
+    <p style="font-size:18px; margin-bottom:25px; color:#4a4a4a; line-height:1.6;">
+      Quickly download the official Brother printer assistant to manage your printer, optimize performance, and get updates.
+    </p>
+
+    <div class="hero-form" style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px;">
+      <input id="printerModel" type="text" placeholder="Enter Brother Printer Model (e.g., Brother 410)"
+        style="flex:1 1 250px; padding:14px 15px; border-radius:8px; border:1px solid #ccc; font-size:16px; outline:none;">
+      <button onclick="startDownload()"
+        style="padding:14px 28px; background:#0D2EA0; border:none; color:#fff; border-radius:8px;
+        cursor:pointer; font-size:16px; font-weight:600; transition:0.3s;">
+        Download
+      </button>
+    </div>
+    <div class="more-examples" style="margin-bottom:20px; font-size:16px; color:#555;">
+      <span style="font-weight:600; margin-right:10px;">Examples:</span>
+      <button onclick="document.getElementById('printerModel').value='Brother 410'" style="background:#e1f0ff; border:none; border-radius:6px; padding:6px 12px; margin:4px; cursor:pointer; transition:0.3s;">Brother 410</button>
+      <button onclick="document.getElementById('printerModel').value='Brother 520'" style="background:#e1f0ff; border:none; border-radius:6px; padding:6px 12px; margin:4px; cursor:pointer; transition:0.3s;">Brother 520</button>
+      <button onclick="document.getElementById('printerModel').value='Brother 620'" style="background:#e1f0ff; border:none; border-radius:6px; padding:6px 12px; margin:4px; cursor:pointer; transition:0.3s;">Brother 620</button>
+      <button onclick="document.getElementById('printerModel').value='Brother 810'" style="background:#e1f0ff; border:none; border-radius:6px; padding:6px 12px; margin:4px; cursor:pointer; transition:0.3s;">Brother 810</button>
+    </div>
+    <div id="progressBox" style="
+      width:100%; max-width:600px; background:#f3f3f3; border-radius:12px;
+      padding:15px; margin-top:10px; display:none;
+    ">
+      <div id="progressText" style="font-size:16px; font-weight:600; margin-bottom:8px;">
+        Downloading… 0%
+      </div>
+      <div style="width:100%; background:#ddd; height:16px; border-radius:10px;">
+        <div id="progressFill" style="
+          width:0%; height:100%; background:#0076d6; border-radius:10px; transition:width 0.2s linear;
+        "></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-img" style="flex:1 1 500px; text-align:center;">
+    <img src="https://img.freepik.com/premium-photo/modern-office-multifunction-printer-office-background-ai-generative_653154-6089.jpg?w=2000"
+      alt="Brother Printer"
+      style="width:100%; max-width:500px; border-radius:16px; box-shadow:0 12px 30px rgba(0,0,0,0.1);">
+  </div>
+
+</section>
+
+<script>
+function startDownload() {
+  let input = document.getElementById("printerModel").value;
+  if (input.trim() === "") {
+    alert("Please enter your Brother printer model.");
+    return;
+  }
+
+  document.getElementById("progressBox").style.display = "block";
+
+  let progress = 0;
+  let fill = document.getElementById("progressFill");
+  let text = document.getElementById("progressText");
+
+  let interval = setInterval(() => {
+    progress++;
+    fill.style.width = progress + "%";
+    text.innerHTML = "Downloading… " + progress + "%";
+
+    if (progress >= 100) {
+      clearInterval(interval);
+      text.innerHTML = "Download Complete! Redirecting…";
+      setTimeout(() => {
+        window.location.href = "install.html";
+      }, 800);
+    }
+  }, 40);
+}
+</script>
+
+
+<section class="cta">
+  <div class="container cta-container">
+    <div class="cta-text">
+      <h2>Ready to Improve Your Printing Experience?</h2>
+      <p>Download PrinterEdge now and start optimizing your printer today!</p>
+    </div>
+    <a href="#download" class="btn btn-primary large">Get Started</a>
+  </div>
+</section> 
+<section class="features" id="features">
+  <h2 class="section-title">Features</h2>
+  <div class="cards">
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/007bff/settings.png"/><h4>Easy Setup</h4><p>Install your printer in minutes.</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/007bff/monitor.png"/><h4>Monitoring</h4><p>Track usage and toner levels easily.</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/007bff/checked.png"/><h4>Optimization</h4><p>Ensure best printing performance.</p></div>
+    <div class="card"><img src="https://img.icons8.com/ios-filled/100/007bff/cloud.png"/><h4>Cloud Support</h4><p>Access your printer anywhere.</p></div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+
+    <div class="footer-about">
+      <h2>PrinterEdge</h2>
+      <p class="muted">Your trusted solution for printing & digital services.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Support</a>
+      <a href="#">Careers</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Policies</h3>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/term&condition.html">Terms & Conditions</a>
+      <a href="/disclaimer.html">Disclamer</a>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:info@printeredge.com">info@printeredge.com</a></p>
+      <p>Phone: <a href="tel:+18774194506">+18774194506</a></p>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p style="text-align:center;">© 2025 PrinterEdge. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+ 
+
+const navToggle = document.querySelector('.nav-toggle');
+const mobileNav = document.getElementById('mobileNav');
+
+navToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('show');
+});
+
+
+
+</script>
+
+</body>
+</html>
