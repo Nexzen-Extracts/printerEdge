@@ -9,38 +9,38 @@
 </head>
 <body>
 
-<header class="site-header"> 
+<header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#">Printer<span class="brand-accent">Edge</span></a>
+    <a class="brand" href="#">
+      <span class="brand-logo">🖨️</span>
+      Printer<span class="brand-accent">Edge</span>
+    </a>
     <nav class="main-nav">
       <ul>
         <li><a href="#features">Features</a></li>
-        <li><a href="#download">Download</a></li>
-        <li><a href="#software">Software Info</a></li>
+        <li><a href="#software">Software</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#support">Support</a></li>
       </ul>
-    </nav>
-
+    </nav> 
     <div class="header-cta">
-      <a href="#download" class="btn btn-primary">Download</a>
-    </div>
-
-    <!-- Mobile toggle button -->
+      <a href="#downloads" class="btn btn-outline">Free Scan</a>
+      <a href="#downloads" class="btn btn-primary">Download Driver</a>
+    </div> 
     <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-  </div>
 
-  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
-    <div class="mobile-nav-inner container">
-      <ul>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#download">Download</a></li>
-        <li><a href="#software">Software Info</a></li>
-      </ul>
-      <div class="mobile-cta">
-        <a class="btn btn-primary" href="#download">Download</a>
-      </div>
-    </div>
+  </div> 
+  <div id="mobileNav" class="mobile-nav">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#downloads">Downloads</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+    <a href="#downloads" class="btn btn-primary mobile-btn">Download Driver</a>
   </div>
 </header>
+
 
 
 <main>
@@ -54,8 +54,11 @@
         reduces errors and improves print quality for home and office use.
       </p>
       <div class="hero-actions">
-        <a href="#download" class="btn btn-primary large">Download Now</a>
-        <a href="#features" class="btn btn-ghost">Learn More</a>
+        <a href="javascript:void(0)" class="btn btn-primary large" id="openPrinterModal">
+  Printer Setup
+</a>
+
+        <a href="#features" class="btn btn-ghost">Connect Agent</a>
       </div>
       <div class="hero-highlights">
         <div class="highlight">
@@ -82,55 +85,110 @@
   </div>
 </section>
 
+<section class="printer-cta">
+  <div class="cta-overlay"></div>
 
+  <div class="container cta-content">
+    <h2>Simplify Your Printer Setup</h2>
 
-<section class="printer-professional">
-  <div class="container">
+    <p class="cta-subtitle">
+      Download, Install & Connect Your Printer Effortlessly
+    </p>
 
-    <div class="section-title">
-      <h2>Printer Support & Driver Setup</h2>
-      <p>Your one-stop solution for fast installation, troubleshooting, and optimization.</p>
-    </div>
+    <p class="cta-desc">
+      Whether you’re setting up your printer for the first time or reinstalling drivers,
+      we make it easy for you. Choose your printer brand and start downloading the
+      latest and most compatible drivers today.
+    </p>
 
-    <div class="brand-grid">
+    <ul class="cta-points">
+      <li>✅ One-click Printer Driver Download</li>
+      <li>✅ Wireless & USB Printer Setup Guides</li>
+      <li>✅ Troubleshooting Support for All Models</li>
+      <li>✅ Compatible with Windows & macOS</li>
+    </ul>
 
-      <article class="brand-card hp">
-        <span class="line-left"></span>
-        <span class="line-right"></span>
-        <h3>HP Printers</h3>
-        <p>Quick setup, driver installation, and error troubleshooting for all HP models.</p>
-        <a href="HP/index.html" class="btn-start">Start Now</a>
-      </article>
-
-      <article class="brand-card canon">
-        <span class="line-left"></span>
-        <span class="line-right"></span>
-        <h3>Canon Printers</h3>
-        <p>Fix installation errors and optimize Canon printer performance.</p>
-        <a href="Canon/index.html" class="btn-start">Start Now</a>
-      </article>
-
-      <article class="brand-card brother">
-        <span class="line-left"></span>
-        <span class="line-right"></span>
-        <h3>Brother Printers</h3>
-        <p>Instant driver setup & troubleshooting for any Brother printer.</p>
-        <a href="Brother/index.html" class="btn-start">Start Now</a>
-      </article>
-
-      <article class="brand-card epson">
-        <span class="line-left"></span>
-        <span class="line-right"></span>
-        <h3>Epson Printers</h3>
-        <p>Resolve download issues, install drivers, and optimize print quality.</p>
-        <a href="EPSON/index.html" class="btn-start">Start Now</a>
-      </article>
-
-    </div>
-
+    <a href="#downloads" class="btn btn-primary cta-btn">
+      Get Printer Drivers
+    </a>
   </div>
 </section>
+<div class="modal-overlay" id="printerModal">
+  <div class="modal-box">
+    
+    <button class="modal-close" id="closePrinterModal">✕</button>
 
+    <section class="printer-professional" id="downloads">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Printer Support & Driver Setup</h2>
+          <p>Your one-stop solution for fast installation, troubleshooting, and optimization.</p>
+        </div>
+
+        <div class="brand-grid">
+
+          <article class="brand-card hp">
+            <span class="line-left"></span>
+            <span class="line-right"></span>
+            <h3>HP Printers</h3>
+            <p>Quick setup, driver installation, and error troubleshooting for all HP models.</p>
+            <a href="HP/index.html" class="btn-start">Start Now</a>
+          </article>
+
+          <article class="brand-card canon">
+            <span class="line-left"></span>
+            <span class="line-right"></span>
+            <h3>Canon Printers</h3>
+            <p>Fix installation errors and optimize Canon printer performance.</p>
+            <a href="Canon/index.html" class="btn-start">Start Now</a>
+          </article>
+
+          <article class="brand-card brother">
+            <span class="line-left"></span>
+            <span class="line-right"></span>
+            <h3>Brother Printers</h3>
+            <p>Instant driver setup & troubleshooting for any Brother printer.</p>
+            <a href="Brother/index.html" class="btn-start">Start Now</a>
+          </article>
+
+          <article class="brand-card epson">
+            <span class="line-left"></span>
+            <span class="line-right"></span>
+            <h3>Epson Printers</h3>
+            <p>Resolve download issues, install drivers, and optimize print quality.</p>
+            <a href="EPSON/index.html" class="btn-start">Start Now</a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  const openBtn = document.getElementById("openPrinterModal");
+  const closeBtn = document.getElementById("closePrinterModal");
+  const modal = document.getElementById("printerModal");
+
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+  });
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  });
+</script>
 
 <section class="cta">
   <div class="container cta-container">
@@ -140,8 +198,7 @@
     </div>
     <a href="#download" class="btn btn-primary large">Get Started</a>
   </div>
-</section>
-
+</section> 
   <section class="features" id="features">
     <div class="container">
       <h2 class="section-title">Learning Resources & Tools</h2>
@@ -195,38 +252,53 @@
 
 <footer class="site-footer">
   <div class="container footer-grid">
-
-    <div class="footer-about">
-      <h2>PrinterEdge</h2>
-      <p class="muted">Your trusted solution for printing & digital services.</p>
+    <div class="footer-col footer-about">
+      <h2>Printer<span>Edge</span></h2>
+      <p class="muted">
+        Reliable printer setup, driver installation, and troubleshooting
+        support for all major printer brands.
+      </p>
+      <div class="footer-badges">
+        <span>🔒 SSL Secured</span>
+        <span>✔ Verified Support</span>
+        <span>⭐ Trusted Service</span>
+      </div>
     </div>
-
-    <div class="footer-links">
+    <div class="footer-col footer-links">
       <h3>Company</h3>
       <a href="#">About Us</a>
       <a href="#">Support</a>
       <a href="#">Careers</a>
+      <a href="#">Blog</a>
     </div>
-
-    <div class="footer-links">
-      <h3>Policies</h3>
+    <div class="footer-col footer-links">
+      <h3>Legal</h3>
       <a href="privacy.html">Privacy Policy</a>
       <a href="term&condition.html">Terms & Conditions</a>
-      <a href="disclaimer.html">Disclamer</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="#">Refund Policy</a>
     </div>
-
-    <div class="footer-contact">
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:info@printeredge.com">info@printeredge.com</a></p>
-      <p>Phone: <a href="tel:+18774194506">+18774194506</a></p>
-    </div>
-
+    <div class="footer-col footer-contact">
+  <h3>Contact</h3>
+  <div class="contact-row">
+    <span class="contact-label">Email:</span>
+    <a href="mailto:info@printeredge.com">info@printeredge.com</a>
   </div>
-
-  <div class="container footer-bottom">
-    <p style="text-align:center;">© 2025 PrinterEdge. All rights reserved.</p>
+  <div class="contact-row">
+    <span class="contact-label">Phone:</span>
+    <a href="tel:+18774194506">+1 (877) 419-4506</a>
+  </div>
+  <a href="#downloads" class="footer-cta">
+    Get Printer Drivers
+  </a>
+</div>
+    </div> 
+  </div> 
+  <div class="footer-bottom">
+    © 2025 PrinterEdge. All rights reserved.
   </div>
 </footer>
+
 
 
 <script>
