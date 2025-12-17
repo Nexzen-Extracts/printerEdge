@@ -6,7 +6,7 @@
 <title>PrinterDriver</title>
  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <script src="//code.jivosite.com/widget/XIBgC2jM7P" async></script>
+  
 <body>
 <header class="site-header">
   <div class="container header-inner">
@@ -217,7 +217,15 @@
     <div class="popup-form">
       <h2>Verify Your Details</h2>
       <input id="name" type="text" placeholder="Full Name">
-      <input id="phone" type="text" placeholder="Phone Number">
+      <input 
+  id="phone" 
+  type="tel" 
+  placeholder="Phone Number (10 digits)"
+  maxlength="10"
+  oninput="this.value=this.value.replace(/[^0-9]/g,'')"
+>
+
+
       <input id="email" type="email" placeholder="Email Address">
       <button onclick="submitForm()">Continue Setup</button>
     </div>
