@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrinterDriver</title>
+ <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+   <script src="//code.jivosite.com/widget/XIBgC2jM7P" async></script>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+          <a class="brand" href="search.html" style="display: flex; align-items: center; text-decoration: none;">
+    <img src="/images/Gemini_Generated_Image_ybyra8ybyra8ybyr-removebg-preview.png" alt="PrinterDriver Logo" 
+         style="width: 150px; height: auto; margin-right: 8px; vertical-align: middle;border-radius:25px;">
+    
+        
+    </span>
+</a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#software">Software</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </nav> 
+    <div class="header-cta">
+      <a href="#" class="btn btn-outline" style="background-color:green;">Live Chat</a>
+      <a href="tel:+18774194506" class="btn btn-primary"style="background-color:white;color:black;">+1(877)4194506</a>
+    </div> 
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+  </div> 
+  <div id="mobileNav" class="mobile-nav">
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#">Downloads</a></li>
+      <li><a href="#">Support</a></li>
+    </ul>
+    <a href="#" class="btn btn-primary mobile-btn">Live Chat</a>
+  </div>
+</header>
+<style>
+
+
+#popupOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.popup-box{
+  display:flex;
+  width:90%;
+  max-width:760px;
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.25);
+}
+
+.popup-image{
+  flex:1;
+}
+
+.popup-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.popup-form{
+  flex:1;
+  padding:35px 25px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.popup-form h2{
+  color:#007bff;
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.popup-form input{
+  width:90%;
+  padding:14px;
+  margin-bottom:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:15px;
+}
+
+.popup-form button{
+  width:60%;
+  padding:14px;
+  border:none;
+  border-radius:8px;
+  background:#007bff;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.popup-form button:hover{
+  background:#005fcc;
+}
+
+.wizard-wrapper{
+  max-width:1400px;
+  margin:40px auto;
+  padding:20px;
+  display:flex;
+  gap:25px;
+}
+
+.wizard-left{
+  flex:1;
+  background:#fff;
+  padding:40px;
+  border-radius:16px;
+  border:1px solid #e0e0e0;
+  text-align:center;
+}
+
+.wizard-left h1{
+  color:#007bff;
+  margin:15px 0;
+  font-size:36px;
+}
+
+.wizard-text{
+  color:#555;
+  margin-bottom:20px;
+}
+
+.progress-container{
+  width:100%;
+  height:22px;
+  background:#dfe4ea;
+  border-radius:12px;
+  overflow:hidden;
+  margin:20px 0;
+}
+
+.progress-bar{
+  width:0%;
+  height:100%;
+  background:#007bff;
+  transition:0.3s;
+}
+
+.start-btn{
+  padding:14px 42px;
+  background:#007bff;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  font-size:17px;
+  cursor:pointer;
+}
+
+.start-btn:hover{
+  background:#005fcc;
+}
+
+.error-msg{
+  color:#d80000;
+  font-size:18px;
+  font-weight:600;
+  display:none;
+  margin-top:15px;
+}
+
+.wizard-right{
+  flex:1;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #e0e0e0;
+}
+
+.wizard-right img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+@media(max-width:900px){
+  .wizard-wrapper{
+    flex-direction:column;
+  }
+  .popup-box{
+    flex-direction:column;
+  }
+  .popup-image{
+    height:220px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="popupOverlay">
+  <div class="popup-box">
+    <div class="popup-image">
+      <img src="https://www.brother.eu/-/media/images/brother-uk/modules/super-carousel-images/new/p-j562dw-printer.jpg?rev=f516ebacf7224dd28867b7101c0d6e14&mw=780&hash=8F08FF69473B128964552421C86850B95E20A166">
+    </div>
+    <div class="popup-form">
+      <h2>Verify Your Details</h2>
+      <input id="name" type="text" placeholder="Full Name">
+      <input id="phone" type="text" placeholder="Phone Number">
+      <input id="email" type="email" placeholder="Email Address">
+      <button onclick="submitForm()">Continue Setup</button>
+    </div>
+  </div>
+</div>
+
+<section class="wizard-wrapper" style="display:flex;padding:60px;background:#ffffff;border-radius:14px;max-width:1200px;margin:40px auto;box-shadow:0 20px 45px rgba(0,0,0,0.08);align-items:center;">
+  <div class="wizard-left" style="
+    width:50%;
+    padding-right:30px;
+    box-sizing:border-box;
+  ">
+
+    <span style="
+      display:inline-block;
+      background:#e6f0ff;
+      color:#0056d2;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:14px;
+    ">
+      Official Brother Guided Setup
+    </span>
+
+    <h1 style="
+      font-size:36px;
+      margin:10px 0 16px;
+      color:#1a1a1a;
+    ">
+      Quick & Secure Brother Printer Setup
+    </h1>
+
+    <p style="
+      font-size:16px;
+      color:#555;
+      line-height:1.6;
+    ">
+      Install, connect, and configure your Brother printer effortlessly using our
+      step-by-step guided assistant. Designed for speed, accuracy, and reliability.
+    </p>
+
+    
+
+    <div id="step-title" style="
+      font-weight:600;
+      margin-bottom:10px;
+      color:#333;
+    ">
+      Step 1 of 3: Detecting your printer...
+    </div>
+
+    <div id="progressContainer" style="
+      width:100%;
+      height:10px;
+      background:#e5e7eb;
+      border-radius:10px;
+      overflow:hidden;
+      margin-bottom:25px;
+    ">
+      <div id="progressBar" style="
+        width:40%;
+        height:100%;
+        background:linear-gradient(90deg,#0056d2,#4f8cff);
+        border-radius:10px;
+      "></div>
+    </div>
+
+    <button id="nextBtn" style="
+      padding:14px 34px;
+      background:#0056d2;
+      color:#fff;
+      font-size:16px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      display:none;
+    ">
+      Start Secure Setup
+    </button>
+
+    <div id="errorMsg" style="
+      margin-top:16px;
+      color:#d32f2f;
+      font-weight:600;
+      display:none;
+    ">
+      ❌ Setup interrupted. Please retry or check your connection.
+    </div>
+
+    <p style="
+      margin-top:20px;
+      font-size:13px;
+      color:#666;
+    ">
+      🔒 Your data is protected. No personal information is stored.
+    </p>
+
+  </div>
+  <div class="wizard-right" style="
+    width:50%;
+    padding-left:30px;
+    
+    text-align:center;
+  ">
+    <img 
+      src="https://www.brother.eu/-/media/images/brother-uk/modules/super-carousel-images/new/p-j562dw-printer.jpg?rev=f516ebacf7224dd28867b7101c0d6e14&mw=780&hash=8F08FF69473B128964552421C86850B95E20A166"
+      alt="Brother Printer Setup"
+      style="
+        width:100%;
+        max-width:100%;
+        border-radius:14px;
+        
+      ">
+  </div>
+
+</section>
+
+
+<script>
+function submitForm(){
+  let n=document.getElementById("name").value.trim();
+  let p=document.getElementById("phone").value.trim();
+  let e=document.getElementById("email").value.trim();
+  if(!n||!p||!e){alert("Please fill all fields");return;}
+  document.getElementById("popupOverlay").style.display="none";
+  runStep1();
+}
+
+function runStep1(){
+  const bar=document.getElementById("progressBar");
+  const title=document.getElementById("step-title");
+  let x=0;
+  let t=setInterval(()=>{
+    x++;bar.style.width=x+"%";
+    if(x>=100){
+      clearInterval(t);
+      bar.style.width="0%";
+      title.innerText="Step 2: Connecting to Wi-Fi...";
+      runStep2();
+    }
+  },35);
+}
+
+function runStep2(){
+  const bar=document.getElementById("progressBar");
+  const title=document.getElementById("step-title");
+  let x=0;
+  let t=setInterval(()=>{
+    x++;bar.style.width=x+"%";
+    if(x>=100){
+      clearInterval(t);
+      bar.style.width="0%";
+      title.innerText="Step 3: Installing drivers...";
+      runStep3();
+    }
+  },35);
+}
+
+function runStep3(){
+  const bar=document.getElementById("progressBar");
+  const title=document.getElementById("step-title");
+  const err=document.getElementById("errorMsg");
+  const cont=document.getElementById("progressContainer");
+  let x=0;
+  let t=setInterval(()=>{
+    x++;bar.style.width=x+"%";
+    if(x>=80){
+      clearInterval(t);
+      err.style.display="block";
+      cont.style.display="none";
+      title.innerText="";
+      setTimeout(()=>{window.location.href="error.html"},2000);
+    }
+  },35);
+}
+</script>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col footer-about">
+             <a class="brand" href="search.html" style="display: flex; align-items: center; text-decoration: none;">
+    <img src="/images/Gemini_Generated_Image_ybyra8ybyra8ybyr-removebg-preview.png" alt="PrinterDriver Logo" 
+         style="width: 150px; height: auto; margin-right: 8px; vertical-align: middle;border-radius:25px;">
+    
+        
+    </span>
+</a>
+      <p class="muted">
+        Reliable printer setup, driver installation, and troubleshooting
+        support for all major printer brands.
+      </p>
+      <div class="footer-badges">
+        <span>🔒 SSL Secured</span>
+        <span>✔ Verified Support</span>
+        <span>⭐ Trusted Service</span>
+      </div>
+    </div>
+   
+    <div class="footer-col footer-links">
+      <h3>Legal</h3>
+      <a href="/privacy_policy.html">Privacy Policy</a>
+      <a href="/term&condition.html">Terms & Conditions</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/refund_policy.html">Refund Policy</a>
+    </div>
+    <div class="footer-col footer-contact">
+  <h3>Contact</h3>
+  <div class="contact-row">
+    <span class="contact-label">Email:</span>
+    <a href="mailto:info@printerdriver.com">info@printerdriver.com</a>
+  </div>
+  <div class="contact-row">
+    <span class="contact-label">Phone:</span>
+    <a href="tel:+18774194506">+1 (877) 419-4506</a>
+  </div>
+  <a href="#" class="footer-cta">
+    Get Printer Drivers
+  </a>
+</div>
+    </div> 
+  </div> 
+  <div class="footer-bottom">
+    © 2025 PrinterDriver. All rights reserved.
+  </div>
+</footer>
+
+
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  navToggle.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    const target = e.target.closest("a, button");
+    if (!target) return;
+
+    const href = target.getAttribute("href");
+
+    if (href === "#" || href === "" || href === null) {
+      e.preventDefault();
+
+      if (window.jivo_api) {
+        jivo_api.open();
+      } else {
+        const script = document.createElement("script");
+        script.src = "//code.jivosite.com/widget/XIBgC2jM7P";
+        script.async = true;
+        document.body.appendChild(script);
+
+        script.onload = function () {
+          if (window.jivo_api) {
+            jivo_api.open();
+          }
+        };
+      }
+    }
+  });
+</script>
+
+
+</body>
+</html>
+
